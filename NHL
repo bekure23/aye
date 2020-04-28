@@ -1,0 +1,73 @@
+print('Atlantic Division Standings')
+atlantic = {'BOS', 'TB', 'TOR', 'FLA', 'MTL', 'BUF', 'OTT', 'DET'}
+atlantic_list = list(atlantic)
+for a in atlantic_list:
+    print(a)
+print('\n')
+
+print('Metropolitan Division Standings')
+metropolitan = {'WSH', 'PIT', 'PHI', 'CAR', 'CLS', 'NYI', 'NYR', 'NJ'}
+metropolitan_list = list(metropolitan)
+for m in metropolitan_list:
+    print(m)
+print('\n')
+
+print('Central Division Standings')
+central = {'STL', 'COL', 'DAL', 'WPG', 'NSH', 'MIN', 'CHI'}
+central_list = list(central)
+for c in central_list:
+    print(c)
+print('\n')
+
+print('Pacific Division Standings')
+pacific = {'VGK', 'EDM', 'CAL', 'VAN', 'ARI', 'ANA', 'LA', 'SJ'}
+pacific_list = list(pacific)
+for p in pacific_list:
+    print(p)
+print('\n')
+
+print('Eastern Conference Champion')
+east = {atlantic_list[0], metropolitan_list[0]}
+east_list = list(east)
+for e in east_list:
+    print(e)
+print('\n')
+
+print('Western Conference Champion')
+west = {central_list[0], pacific_list[0]}
+west_list = list(west)
+for w in west_list:
+    print(w)
+print('\n')
+
+wc_east_first = list({atlantic_list[3], metropolitan_list[3]})
+wc_east_first_list = wc_east_first[0]
+if wc_east_first[0] == atlantic_list[3]:
+    wc_east_second = list({atlantic_list[4], metropolitan_list[3]})
+    wc_east_second_list = wc_east_second[0]
+elif wc_east_first[0] == metropolitan_list[3]:
+    wc_east_second = list({metropolitan_list[4], atlantic_list[3]})
+    wc_east_second_list = wc_east_second[0]
+
+wc_west_first = list({central_list[3], pacific_list[3]})
+wc_west_first_list = wc_west_first[0]
+if wc_west_first[0] == central_list[3]:
+    wc_west_second = list({central_list[4], pacific_list[3]})
+    wc_west_second_list = wc_west_second[0]
+elif wc_west_first[0] == pacific_list[3]:
+    wc_west_second = list({pacific_list[4], central_list[3]})
+    wc_west_second_list = wc_west_second[0]
+
+print('Playoff Matchups')
+print('')
+print('Eastern Conference')
+print(f'{east_list[0]} vs {wc_east_second_list}')
+print(f'{east_list[1]} vs {wc_east_first_list}')
+print(f'{atlantic_list[1]} vs {atlantic_list[2]}')
+print(f'{metropolitan_list[1]} vs {metropolitan_list[2]}')
+print('')
+print('Western Conference')
+print(f'{west_list[0]} vs {wc_west_second_list}')
+print(f'{west_list[1]} vs {wc_west_first_list}')
+print(f'{central_list[1]} vs {central_list[2]}')
+print(f'{pacific_list[1]} vs {pacific_list[2]}')
